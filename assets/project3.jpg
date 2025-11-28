@@ -1,0 +1,14 @@
+﻿<svg width="400" height="200" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="200" fill="#0f2027"/>
+  <text x="50%" y="30%" text-anchor="middle" fill="#00c6ff" font-size="20" font-family="Arial, sans-serif">ML Algorithms</text>
+  <text x="50%" y="50%" text-anchor="middle" fill="#e0e0e0" font-size="14" font-family="Arial, sans-serif">Regression, Decision Trees, etc.</text>
+  <rect x="120" y="80" width="50" height="30" fill="#00c6ff" rx="3"/>
+  <text x="145" y="98" text-anchor="middle" fill="#fff" font-size="8" font-family="Arial, sans-serif">ML</text>
+  <path d="M180 80 L200 100 L180 120 L160 100 Z" fill="#2c5364"/>
+  <circle cx="180" cy="100" r="5" fill="#00c6ff"/>
+  <text x="50%" y="75%" text-anchor="middle" fill="#00c6ff" font-size="12" font-family="Arial, sans-serif">🤖 Data Science</text>
+  <rect x="250" y="85" width="60" height="25" fill="#00c6ff" rx="2"/>
+  <text x="280" y="100" text-anchor="middle" fill="#fff" font-size="8" font-family="Arial, sans-serif">Predict</text>
+  <circle cx="320" cy="95" r="10" fill="#2c5364"/>
+  <text x="320" y="100" text-anchor="middle" fill="#fff" font-size="10" font-family="Arial, sans-serif">📊</text>
+</svg>
