@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿Profile image
 
 - The About section no longer includes a built-in placeholder image.
@@ -19,3 +20,6 @@ If you want, I can add the image back for you — upload the photo and I'll plac
 =======
 # portfolio
 >>>>>>> 93b95caf281c33192293e3fa8a102f52e0963bc5
+=======
+# portf
+>>>>>>> 113f3695940c5d268e13ea2c9a2bb771d29f82aa
