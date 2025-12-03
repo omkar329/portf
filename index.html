@@ -14,21 +14,38 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Header / Navbar (centered logo variant) -->
-  <header class="navbar centered">
-    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-    <nav class="nav-menu" role="navigation" aria-label="Main">
+  <!-- Header / Navbar: logo left, nav + icons right -->
+  <header class="navbar" role="banner">
+    <div class="nav-left">
       <div class="logo">Omkar K..</div>
-      <ul class="nav-right">
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-    <button id="theme-toggle" aria-label="Toggle light/dark mode">🌙</button>
+    </div>
+
+    <div class="nav-right-wrapper">
+      <!-- Theme toggle (icon + label) - header-level (visible on mobile) -->
+      <button id="theme-toggle" class="theme-button" aria-label="Toggle light/dark mode" aria-pressed="false">
+        <span class="theme-icon">🌙</span>
+      </button>
+
+      <!-- Mobile menu toggle (hamburger) -->
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">☰</button>
+
+      <!-- Main navigation (desktop inline, mobile off-canvas) -->
+      <nav id="main-nav" class="nav-menu" role="navigation" aria-label="Main navigation">
+        <ul class="nav-right" role="menubar">
+          <li role="none"><a role="menuitem" href="#hero">Home</a></li>
+          <li role="none"><a role="menuitem" href="#about">About</a></li>
+          <li role="none"><a role="menuitem" href="#skills">Skills</a></li>
+          <li role="none"><a role="menuitem" href="#projects">Projects</a></li>
+          <li role="none"><a role="menuitem" href="#education">Education</a></li>
+          <li role="none"><a role="menuitem" href="#contact">Contact</a></li>
+          <li role="none" class="nav-moon">
+            <button class="nav-theme-btn theme-button" aria-label="Toggle light/dark mode" aria-pressed="false">
+              <span class="theme-icon">🌙</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <!-- Hero Section -->
@@ -37,7 +54,7 @@
     
     <div class="hero-content">
       <div class="hero-overlay">
-        <h1 class="hero-title">Hi, I'm <span>Omkar K..</span></h1>
+        <h1 class="hero-title">Hi, I'm <span>Omkar Kaunsalye</span></h1>
         <h2 class="hero-sub"><span id="typed"></span></h2>
         <div class="hero-links">
           <a class="btn" href="#projects">View Projects</a>
@@ -53,6 +70,7 @@
   <!-- About Section -->
   <section id="about" class="about">
     <div class="about-card">
+      <img src="assets/om.jpg" alt="Omkar Kaunsalye" class="about-photo">
       <div class="about-info">
           <h3>About Me</h3>
           <p>I’m Omkar Balaji Kaunsalye, a B.Tech AIML Engineering student at Deogiri College, DBATU University. I have a strong interest in Artificial Intelligence, Machine Learning, Web Development, and Software Engineering. I enjoy turning ideas into real projects that solve practical problems.</p>
@@ -248,7 +266,6 @@
       <input type="text" name="subject" placeholder="Subject" required>
       <textarea name="message" placeholder="Your Message" required></textarea>
       <button type="submit" class="btn submit-btn">Send Message</button>
-      <div class="form-note">Form submits via backend. Ensure SMTP creds are configured in `.env`.</div>
     </form>
     <!-- Map removed -->
   </section>

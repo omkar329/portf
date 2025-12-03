@@ -52,14 +52,39 @@ document.querySelectorAll('.navbar a, .footer-links a').forEach(link => {
   });
 });
 
-// Light/Dark theme toggle
-const themeBtn = document.getElementById('theme-toggle');
-if (themeBtn) {
-  themeBtn.addEventListener('click', () => {
-    document.body.classList.toggle('light');
-    themeBtn.textContent = document.body.classList.contains('light') ? '🌞' : '🌙';
+// Light/Dark theme toggle (accessible) — support both header `#theme-toggle` and in-list `.nav-theme-btn`
+function updateThemeButtons(isLight) {
+  // header button
+  const headerBtn = document.getElementById('theme-toggle');
+  if (headerBtn) {
+    headerBtn.setAttribute('aria-pressed', isLight ? 'true' : 'false');
+    const icon = headerBtn.querySelector('.theme-icon');
+    const label = headerBtn.querySelector('.theme-label');
+    if (icon) icon.textContent = isLight ? '🌞' : '🌙';
+  }
+  // in-list buttons
+  document.querySelectorAll('.nav-theme-btn').forEach(b => {
+    b.setAttribute('aria-pressed', isLight ? 'true' : 'false');
+    const icon = b.querySelector('.theme-icon');
+    const label = b.querySelector('.theme-label');
+    if (icon) icon.textContent = isLight ? '🌞' : '🌙';
   });
 }
+
+(function initThemeToggles(){
+  const headerBtn = document.getElementById('theme-toggle');
+  const inlineBtns = Array.from(document.querySelectorAll('.nav-theme-btn'));
+  const isLight = document.body.classList.contains('light');
+  updateThemeButtons(isLight);
+
+  function toggleTheme() {
+    const nowLight = document.body.classList.toggle('light');
+    updateThemeButtons(nowLight);
+  }
+
+  if (headerBtn) headerBtn.addEventListener('click', toggleTheme);
+  inlineBtns.forEach(b => b.addEventListener('click', toggleTheme));
+})();
 
 // Mobile nav toggle (supports multiple pages)
 document.querySelectorAll('.nav-toggle').forEach(btn => {
@@ -214,8 +239,9 @@ if (contactForm) {
       const origText = btn.textContent;
       btn.textContent = 'Sending...';
 
-      const backendUrl = 'http://localhost:3001';
-      const res = await fetch(backendUrl + '/api/contact', {
+      // Use same-origin API path so frontend sends to the server serving the site.
+      // This avoids mismatched ports (was previously pointing to :3001).
+      const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, subject, message })
