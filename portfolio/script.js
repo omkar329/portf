@@ -1,6 +1,7 @@
-﻿// Portfolio contact form -> send to backend at port 3001
+﻿// Portfolio contact form -> send to backend
 (() => {
-    const backendUrl = 'http://localhost:3001';
+    // Use root backend server (handles both local and production)
+    const backendUrl = window.location.origin;
     const form = document.querySelector('.contact-form');
     if (!form) return;
 
@@ -57,6 +58,52 @@
                 btn.disabled = false;
                 btn.textContent = 'Send Message';
             }
+        }
+    });
+})();
+
+// Responsive Navbar Toggle - Right Side Slide Menu
+(() => {
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    const navOverlay = document.querySelector('.nav-overlay');
+    const navLinks = document.querySelectorAll('.nav-menu a');
+
+    if (!navToggle || !navMenu) return;
+
+    // Toggle menu on hamburger click
+    navToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', !isExpanded);
+        navMenu.classList.toggle('active');
+        if (navOverlay) navOverlay.classList.toggle('active');
+    });
+
+    // Close menu when clicking on a nav link
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navToggle.setAttribute('aria-expanded', 'false');
+            navMenu.classList.remove('active');
+            if (navOverlay) navOverlay.classList.remove('active');
+        });
+    });
+
+    // Close menu when clicking on overlay
+    if (navOverlay) {
+        navOverlay.addEventListener('click', () => {
+            navToggle.setAttribute('aria-expanded', 'false');
+            navMenu.classList.remove('active');
+            navOverlay.classList.remove('active');
+        });
+    }
+
+    // Close menu when pressing Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+            navToggle.setAttribute('aria-expanded', 'false');
+            navMenu.classList.remove('active');
+            if (navOverlay) navOverlay.classList.remove('active');
         }
     });
 })();
