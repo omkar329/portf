@@ -533,6 +533,40 @@ body {
     box-shadow: 0 0 32px #00c6ff99;
 }
 
+/* Contact Info */
+.contact-info {
+    margin-top: 2rem;
+    text-align: center;
+}
+.contact-info h4 {
+    font-size: 1.4rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+.contact-info p {
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+}
+.contact-info a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+.contact-info a:hover {
+    color: var(--white);
+    text-decoration: underline;
+}
+
+/* Form Instruction */
+.form-instruction {
+    font-size: 0.9rem;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+    text-align: center;
+    opacity: 0.8;
+}
+
 /* Footer */
 .footer-section {
     padding: 0;

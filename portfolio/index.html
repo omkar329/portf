@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio of Omkar Kaunsalye</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+    <link rel="icon" type="image/svg+xml" href="../assets/logo.svg">
     <!-- AOS Animation Library -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <!-- Google Fonts -->
@@ -40,12 +40,12 @@
         </nav>
         <div class="nav-overlay"></div>
         <div class="hero-top-image">
-            <img src="assets/hero-top.svg" alt="Hero banner - Omkar K..">
+            <img src="../assets/hero-top.svg" alt="Hero banner - Omkar K..">
             <div class="hero-overlay banner-overlay">
                 <h1 class="hero-title">Hi, I'm <span>Omkar K..</span></h1>
                 <h2 class="hero-sub"><span id="typed"></span></h2>
                 <div class="hero-links">
-                    <a class="btn" href="#projects">View Projects</a>
+                    <a class="btn" href="#projects">View Resume</a>
                     <a class="btn btn-outline" href="#contact">Contact</a>
                 </div>
             </div>
@@ -156,7 +156,7 @@
         <div class="projects-grid">
             <!-- Project 1 -->
             <div class="project-card">
-                <img src="assets/project1.jpg" alt="Sign Language to Words" data-tags="embedded,ml">
+                <img src="../assets/project1.jpg" alt="Sign Language to Words" data-tags="embedded,ml">
                 <div class="project-info">
                     <h4>Sign Language to Words (ESP32 Project)</h4>
                     <p>Real-time sign language recognition using ESP32 and ML models to convert gestures into words.</p>
@@ -170,7 +170,7 @@
             </div>
             <!-- Project 2 -->
             <div class="project-card">
-                <img src="assets/project2.jpg" alt="Student Result Portal" data-tags="web">
+                <img src="../assets/project2.jpg" alt="Student Result Portal" data-tags="web">
                 <div class="project-info">
                     <h4>Student Result Portal (Role-Based System)</h4>
                     <p>Role-based web portal for managing and viewing student results securely and efficiently.</p>
@@ -184,7 +184,7 @@
             </div>
             <!-- Project 3 -->
             <div class="project-card">
-                <img src="assets/project3.jpg" alt="ML Algorithms" data-tags="ml">
+                <img src="../assets/project3.jpg" alt="ML Algorithms" data-tags="ml">
                 <div class="project-info">
                     <h4>ML Algorithms</h4>
                     <p>Implementation of core ML algorithms: Regression, Decision Trees, Random Forest, and more.</p>
@@ -198,7 +198,7 @@
             </div>
             <!-- Project 4 -->
             <div class="project-card">
-                <img src="assets/project4.jpg" alt="Portfolio Website" data-tags="web">
+                <img src="../assets/project4.jpg" alt="Portfolio Website" data-tags="web">
                 <div class="project-info">
                     <h4>Portfolio Website (This Website)</h4>
                     <p>Modern, animated, responsive portfolio website built with HTML, CSS, and JS.</p>
@@ -255,23 +255,16 @@
         <form class="contact-form glass" autocomplete="off">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
+            <p class="form-instruction">Write your message below. Please add your email and location so we can contact you.</p>
             <textarea name="message" placeholder="Your Message" required></textarea>
             <button type="submit" class="submit-btn">Send Message</button>
         </form>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer-section" data-aos="fade-up">
-        <div class="footer-content">
-            <div class="footer-logo">OK</div>
-            <div class="footer-socials">
-                <a href="https://www.linkedin.com/in/omkar-kaunsalye-82a7a832b" target="_blank" aria-label="LinkedIn"><img src="assets/linkedin.svg" alt="LinkedIn"></a>
-                <a href="https://www.instagram.com/it.s_omi.01" target="_blank" aria-label="Instagram"><img src="assets/instagram.svg" alt="Instagram"></a>
-                <a href="https://github.com/omkar329" target="_blank" aria-label="GitHub" rel="noopener noreferrer"><img src="assets/github.svg" alt="GitHub"></a>
-            </div>
-            <div class="footer-copy">&copy; 2025 Omkar Kaunsalye. All rights reserved.</div>
+        <div class="contact-info">
+            <h4>Get in Touch</h4>
+            <p><strong>Email:</strong> <a href="mailto:omkar.kaunsalye@example.com">omkar.kaunsalye@example.com</a></p>
+            <p><strong>Location:</strong> Pune, Maharashtra, India</p>
         </div>
-    </footer>
+    </section>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>

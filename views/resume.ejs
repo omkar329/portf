@@ -1,0 +1,233 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume | Omkar Kaunsalye</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
+    <style>
+        .resume-container {
+            max-width: 900px;
+            margin: 100px auto 50px;
+            padding: 40px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            color: var(--text-color);
+        }
+        
+        .resume-header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 20px;
+        }
+        
+        .resume-header h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .resume-contact {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+        
+        .resume-section {
+            margin-bottom: 30px;
+        }
+        
+        .resume-section h2 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-left: 4px solid var(--secondary-color);
+            padding-left: 10px;
+        }
+        
+        .resume-item {
+            margin-bottom: 20px;
+        }
+        
+        .resume-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+        
+        .resume-item-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        
+        .resume-item-subtitle {
+            font-style: italic;
+            color: var(--text-muted);
+        }
+        
+        .resume-item-date {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        
+        .resume-list {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-top: 5px;
+        }
+        
+        .resume-list li {
+            margin-bottom: 5px;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .skill-category {
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: var(--secondary-color);
+        }
+        
+        .download-btn-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .resume-container {
+                margin: 80px 20px 40px;
+                padding: 20px;
+            }
+            
+            .resume-item-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar" role="banner">
+        <div class="nav-left">
+          <div class="logo"><a href="/" style="text-decoration: none; color: inherit;">Omkar K..</a></div>
+        </div>
+    
+        <div class="nav-right-wrapper">
+          <button id="theme-toggle" class="theme-button" aria-label="Toggle light/dark mode" aria-pressed="false">
+            <span class="theme-icon">🌙</span>
+          </button>
+          
+          <nav id="main-nav" class="nav-menu" role="navigation">
+            <ul class="nav-right" role="menubar">
+              <li role="none"><a role="menuitem" href="/">Home</a></li>
+              <li role="none"><a role="menuitem" href="/#projects">Projects</a></li>
+              <li role="none"><a role="menuitem" href="/#contact">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+    </header>
+
+    <div class="resume-container">
+        <div class="resume-header">
+            <h1>Omkar Balaji Kaunsalye</h1>
+            <p>AI/ML Engineer & Full Stack Developer</p>
+            <div class="resume-contact">
+                <span>📧 okaunsalye@gmail.com</span>
+                <span>📍 Maharashtra, India</span>
+                <span>🔗 <a href="https://linkedin.com/in/omkar-kaunsalye" target="_blank">LinkedIn</a></span>
+                <span>💻 <a href="https://github.com/omkarkaunsalye" target="_blank">GitHub</a></span>
+            </div>
+        </div>
+
+        <div class="resume-section">
+            <h2>Summary</h2>
+            <p>B.Tech AIML Engineering student with a strong foundation in Artificial Intelligence, Machine Learning, and Full Stack Web Development. Passionate about building scalable applications and solving real-world problems through technology. Experienced in Python, Java, and modern web frameworks.</p>
+        </div>
+
+        <div class="resume-section">
+            <h2>Education</h2>
+            <div class="resume-item">
+                <div class="resume-item-header">
+                    <span class="resume-item-title">B.Tech in Artificial Intelligence & Machine Learning</span>
+                    <span class="resume-item-date">2023 - Present</span>
+                </div>
+                <div class="resume-item-subtitle">Deogiri Institute of Engineering and Management Studies, Aurangabad</div>
+                <p>Affiliated with Dr. Babasaheb Ambedkar Technological University (DBATU)</p>
+            </div>
+            
+            <div class="resume-item">
+                <div class="resume-item-header">
+                    <span class="resume-item-title">Diploma in Computer Engineering</span>
+                    <span class="resume-item-date">2020 - 2023</span>
+                </div>
+                <div class="resume-item-subtitle">Government Polytechnic, Aurangabad</div>
+                <p>Graduated with Distinction</p>
+            </div>
+        </div>
+
+        <div class="resume-section">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div>
+                    <div class="skill-category">Languages</div>
+                    <p>Python, Java, JavaScript, C++, SQL</p>
+                </div>
+                <div>
+                    <div class="skill-category">Web Technologies</div>
+                    <p>HTML5, CSS3, Node.js, Express, React</p>
+                </div>
+                <div>
+                    <div class="skill-category">AI / ML</div>
+                    <p>TensorFlow, Scikit-Learn, Pandas, NumPy, OpenCV</p>
+                </div>
+                <div>
+                    <div class="skill-category">Tools & Platforms</div>
+                    <p>Git, GitHub, VS Code, Jupyter Notebook</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="resume-section">
+            <h2>Projects</h2>
+            <div class="resume-item">
+                <div class="resume-item-header">
+                    <span class="resume-item-title">Portfolio Website</span>
+                </div>
+                <p>A responsive personal portfolio website featuring a contact form with email integration, dark mode, and project showcase.</p>
+                <ul class="resume-list">
+                    <li>Built with HTML, CSS, JavaScript, Node.js, and Express.</li>
+                    <li>Implemented secure email handling using Nodemailer.</li>
+                </ul>
+            </div>
+            
+            <div class="resume-item">
+                <div class="resume-item-header">
+                    <span class="resume-item-title">AI-Based Prediction Model</span>
+                </div>
+                <p>Developed a machine learning model to predict outcomes based on historical data sets.</p>
+                <ul class="resume-list">
+                    <li>Utilized Python and Scikit-Learn for model training.</li>
+                    <li>Achieved high accuracy in test scenarios.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="download-btn-container">
+            <a href="#" class="btn" onclick="window.print()">Download PDF</a>
+        </div>
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+</html>

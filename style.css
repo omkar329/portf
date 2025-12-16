@@ -157,20 +157,40 @@ body { font-size: 1rem; line-height: 1.6; }
 .about-card { background: transparent; border-radius: var(--radius); box-shadow: var(--shadow); padding: 2rem; max-width: 1000px; }
 /* About layout: image + details */
 .about-card, .about-container { display: flex; flex-direction: column; gap: 1.5rem; align-items: center; justify-content: center; transition: transform var(--transition), box-shadow var(--transition); text-align: center; }
-.about-photo { width: 160px; height: 160px; border-radius: 12px; object-fit: cover; border: 3px solid rgba(0,198,255,0.14); box-shadow: 0 8px 24px rgba(0,198,255,0.12); flex: 0 0 auto; }
+.about-photo { 
+  width: 180px; 
+  height: 180px; 
+  border-radius: 50%; 
+  object-fit: cover; 
+  border: 2px solid rgba(0,198,255,0.3); 
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2), 0 0 20px rgba(0,198,255,0.15); 
+  flex: 0 0 auto; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.about-photo:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.25), 0 0 28px rgba(0,198,255,0.25);
+}
 .about-info, .about-details { flex: 1 1 auto; max-width: 850px; }
 
 /* Desktop/tablet: image left, text right */
 @media (min-width: 769px) {
   .about-card {
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     text-align: left;
-    gap: 2.4rem;
-    padding: 2rem 1rem;
+    gap: 4rem;
+    padding: 3rem 2rem;
   }
-  .about-photo { width: 220px; height: 220px; border-radius: 14px; }
-  .about-info { padding-right: 1rem; }
+  .about-photo { 
+    width: 280px; 
+    height: 280px; 
+    border-radius: 50%; 
+  }
+  .about-info { 
+    padding-right: 0; 
+    max-width: 850px;
+  }
 }
 .about-info h3 { color: var(--accent); margin-bottom: 0.5rem; font-size: 1.6rem; }
 .about-info h3 { transition: color var(--transition), text-decoration var(--transition); }
@@ -314,8 +334,8 @@ body { font-size: 1rem; line-height: 1.6; }
 /* Contact items hover (icons/text) */
 .contact-item:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,0.28); }
 .contact-item:hover img { filter: drop-shadow(0 0 18px #00c6ff88); }
-.contact-info { display: flex; flex-direction: row; gap: 1rem; max-width: 600px; margin: 0 auto 2rem auto; justify-content: center; }
-.contact-item { display: flex; align-items: center; gap: 0.8rem; background: #fff1; border-radius: var(--radius); box-shadow: var(--shadow); padding: 1rem; flex: 1; max-width: 250px; }
+.contact-info { display: flex; flex-direction: row; flex-wrap: wrap; gap: 1rem; max-width: 800px; margin: 2rem auto 0 auto; justify-content: center; }
+.contact-item { display: flex; align-items: center; gap: 0.8rem; background: #fff1; border-radius: var(--radius); box-shadow: var(--shadow); padding: 1rem; flex: 1 1 200px; max-width: 300px; }
 .contact-item.contact-socials { background: none; box-shadow: none; justify-content: center; padding: 0; }
 .contact-item img { width: 24px; height: 24px; filter: drop-shadow(0 0 8px #00c6ff44); }
 .contact-item span { color: var(--white); font-size: 1rem; }
@@ -332,9 +352,6 @@ body { font-size: 1rem; line-height: 1.6; }
 .address { color: var(--text); font-size: 1rem; text-align: left; flex: 1; }
 .footer { padding: 2rem 2vw 1rem 2vw; background: linear-gradient(90deg, #0f2027 60%, #2c5364 100%); color: var(--text); text-align: center; margin-top: 4vw; }
 .footer-content { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
-.footer-links { display: flex; gap: 1.2rem; margin-bottom: 0.5rem; }
-.footer-links a { color: var(--accent); text-decoration: none; font-weight: 500; }
-.footer-links a:hover { text-decoration: underline; }
 .footer-socials { display: flex; gap: 1.2rem; }
 .footer-socials img { width: 28px; height: 28px; filter: drop-shadow(0 0 8px #00c6ff44); transition: filter var(--transition), transform var(--transition); }
 .footer-socials a:hover img { filter: drop-shadow(0 0 16px #00c6ff99); transform: scale(1.12); }
@@ -537,7 +554,6 @@ body.light .project-card, body.light .timeline-item, body.light .contact-form, b
 body.light .about-card { background: transparent; color: #222; }
 body.light .skill { background: #f0f8ff; color: #0077b6; }
 body.light .project-card:hover { box-shadow: 0 0 24px #48cae499; }
-body.light .footer-links a { color: #0077b6; }
 body.light .footer-copy { color: #2228; }
 
 /* ----------------------------

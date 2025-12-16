@@ -8,6 +8,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Set EJS as templating engine
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
 // Serve static files (frontend) from project root
 app.use(express.static(path.join(__dirname)));
 
@@ -200,5 +204,12 @@ function escapeHtml(text) {
   return text.replace(/[&<>"']/g, m => map[m]);
 }
 
+// Route for Resume Page
+app.get('/resume', (req, res) => {
+  res.render('resume');
+});
+
 const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
 app.listen(PORT, () => console.log(`Backend running on http://localhost:${PORT}`));
+
+
